@@ -8,5 +8,5 @@ cst_voice *register_cmu_us_slt(const char *voxdir);
 cst_voice *unregister_cmu_us_slt();
 
 void flitewrap_init();
-void copy_wav_into_slice(cst_wave *w, short *s);
+void copy_wav_into_slice(const cst_wave *w, short *s);
 #endif
