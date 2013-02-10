@@ -1,3 +1,9 @@
+// Copyright 2013, Carnegie Mellon University. All Rights Reserved.
+// Use of this code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Author: Alok Parlikar <aup@cs.cmu.edu>
+
 package goflite
 
 import "testing"
