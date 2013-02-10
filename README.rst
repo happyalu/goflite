@@ -9,6 +9,8 @@ Usage
 
 import "github.com/happyalu/goflite"
 
+See Example application at http://www.github.com/happyalu/gofliteweb
+
 API
 ===
 
