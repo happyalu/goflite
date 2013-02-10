@@ -11,6 +11,17 @@ import "github.com/happyalu/goflite"
 
 See Example application at http://www.github.com/happyalu/gofliteweb
 
+Build / Install
+===============
+
+GoFlite depends upon the CMU Flite speech synthesis engine ( http://www.cmuflite.org ).
+Running "make depflite" in the source directory will download all dependencies. 
+
+After than, "go build" or "go install" will build the library properly. 
+
+Alternatively, you could just run "make" to download dependencies, build and test goflite.
+
+
 API
 ===
 
