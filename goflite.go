@@ -33,10 +33,10 @@ func init() {
 	voices = newVoxBase()
 }
 
-// Add a voice to list of available voices, given a name the voice
-// will be known as, and the path to the flitevox file. Flitevox files
-// can be dumped using the -voicedump option in flite. Preferably use
-// absolute voice paths to specify location of flitevox files to add.
+// If you have built flite voices and have the flitevox files
+// generated, use this function to add them to goflite. Provide a name
+// to the voice being added and a path to the location of the flitevox
+// file.  Prefer absolute pathname.
 func AddVoice(name, path string) error {
 	return voices.addVoice(name, path)
 }
