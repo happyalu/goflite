@@ -14,6 +14,15 @@ type Wave struct {
 	Samples     []uint16
 }
 
+// Get the Duration of Waveform in Seconds
+func (w *Wave) Duration() float32 {
+	if w.SampleRate == 0 {
+		return 0.0
+	}
+
+	return float32(w.NumSamples) / float32(w.SampleRate)
+}
+
 // Write out complete RIFF waveform, with headers
 func (w *Wave) DumpRIFF(out io.Writer) (err error) {
 

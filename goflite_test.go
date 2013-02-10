@@ -12,9 +12,12 @@ func TestSynthesisWithInvalidVoice(t *testing.T) {
 
 func TestSynthesisWithDefaultVoice(t *testing.T) {
 	voicename := defaultVoiceName
-	_, err := TextToWave("Hello World", voicename)
+	w, err := TextToWave("Hello World", voicename)
 	if err != nil {
 		t.Errorf("Synthesis with default voice should not fail")
 	}
 
+	if w.Duration() == 0 {
+		t.Errorf("Synthesis with default voice has empty waveform")
+	}
 }
