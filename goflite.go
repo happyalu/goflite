@@ -19,12 +19,20 @@ import (
 	"unsafe"
 )
 
-var voices *voxbase
+var voices *voxbase // List of available voices stored here
 
 // Initialize Flite
 func init() {
 	C.flitewrap_init()
 	voices = newVoxBase()
+}
+
+// Add a voice to list of available voices, given a name the voice
+// will be known as, and the path to the flitevox file. Preferably use
+// absolute voice paths.  If no voices are added, the "slt" voice is
+// always supported
+func AddVoice(name, path string) error {
+	return voices.addVoice(name, path)
 }
 
 // Run Text to Speech on a given text with a selected voice and return Wave data
