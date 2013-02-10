@@ -29,8 +29,8 @@ func (w *Wave) Duration() float32 {
 	return float32(w.NumSamples) / float32(w.SampleRate)
 }
 
-// Write out complete RIFF waveform, with headers
-func (w *Wave) DumpRIFF(out io.Writer) (err error) {
+// Write out the waveform, with RIFF headers
+func (w *Wave) EncodeRIFF(out io.Writer) (err error) {
 
 	defer func() {
 		if r := recover(); r != nil {

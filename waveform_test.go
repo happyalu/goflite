@@ -25,7 +25,7 @@ func TestWaveformWritePanic(t *testing.T) {
 	var c spanic
 	var w Wave
 
-	err := w.DumpRIFF(&c)
+	err := w.EncodeRIFF(&c)
 	if err == nil {
 		t.Errorf("Waveform writing not handling errors")
 	}
@@ -34,9 +34,9 @@ func TestWaveformWritePanic(t *testing.T) {
 func TestEmptyWaveform(t *testing.T) {
 	var b bytes.Buffer
 	var w Wave
-	err := w.DumpRIFF(&b)
+	err := w.EncodeRIFF(&b)
 	if err != nil {
-		t.Errorf("DumpRIFF Failed")
+		t.Errorf("EncodeRIFF Failed")
 	}
 	if b.Len() != 44 {
 		t.Errorf("Empty RIFF header must be 44 bytes. Received %d", b.Len())
@@ -57,9 +57,9 @@ func TestNonEmptyWaveform(t *testing.T) {
 		Samples:     make([]uint16, 10, 10),
 	}
 
-	err := w.DumpRIFF(&b)
+	err := w.EncodeRIFF(&b)
 	if err != nil {
-		t.Errorf("DumpRIFF Failed")
+		t.Errorf("EncodeRIFF Failed")
 	}
 	if b.Len() != 64 {
 		t.Errorf("Expected length of waveform 64 bytes. Received %d bytes", b.Len())
