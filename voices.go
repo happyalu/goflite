@@ -46,7 +46,7 @@ func newVoxBase() *voxbase {
 // will be known as, and the path to the flitevox file. Preferably use
 // absolute voice paths.  If no voices are added, the "slt" voice is
 // always supported
-func (voices *voxbase) AddVoice(name, path string) error {
+func (voices *voxbase) addVoice(name, path string) error {
 	voices.mutex.Lock()
 	defer voices.mutex.Unlock()
 	_, present := voices.flitevox[name]
@@ -67,7 +67,7 @@ func (voices *voxbase) AddVoice(name, path string) error {
 }
 
 // Voices stored in voxbase are C structures that should be freed
-func (voices *voxbase) Free() {
+func (voices *voxbase) free() {
 	voices.mutex.Lock()
 	defer voices.mutex.Unlock()
 
