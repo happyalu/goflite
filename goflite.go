@@ -49,6 +49,11 @@ func TextToWave(text, voicename string) (*Wave, error) {
 		cstwav *C.cst_wave // Flite's wave structure
 	)
 
+	if voicename == "" {
+		// Choose default voice
+		voicename = defaultVoiceName
+	}
+
 	ctext := C.CString(text)
 	defer C.free(unsafe.Pointer(ctext))
 
