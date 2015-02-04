@@ -10,6 +10,10 @@
 
 void usenglish_init(cst_voice *v);
 cst_lexicon *cmulex_init(void);
+
+void cmu_indic_lang_init(cst_voice *v);
+cst_lexicon *cmu_indic_lex_init(void);
+
 cst_voice *register_cmu_us_slt(const char *voxdir);
 cst_voice *unregister_cmu_us_slt();
 

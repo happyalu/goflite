@@ -10,10 +10,10 @@ package goflite
 // +build linux,cgo
 
 /*
- #cgo CFLAGS: -I. -I dep/flite/include
- #cgo linux,amd64 LDFLAGS: dep/flite/build/x86_64-linux-gnu/lib/libflite_cmu_us_slt.a dep/flite/build/x86_64-linux-gnu/lib/libflite_cmulex.a dep/flite/build/x86_64-linux-gnu/lib/libflite_usenglish.a dep/flite/build/x86_64-linux-gnu/lib/libflite.a -lm
+ #cgo CFLAGS: -I ${SRCDIR} -I${SRCDIR}/dep/flite/include
+ #cgo linux,amd64 LDFLAGS: ${SRCDIR}/dep/flite/build/x86_64-linux-gnu/lib/libflite_cmu_us_slt.a ${SRCDIR}/dep/flite/build/x86_64-linux-gnu/lib/libflite_cmulex.a ${SRCDIR}/dep/flite/build/x86_64-linux-gnu/lib/libflite_usenglish.a ${SRCDIR}/dep/flite/build/x86_64-linux-gnu/lib/libflite_cmu_indic_lex.a ${SRCDIR}/dep/flite/build/x86_64-linux-gnu/lib/libflite_cmu_indic_lang.a ${SRCDIR}/dep/flite/build/x86_64-linux-gnu/lib/libflite.a -lm
 
- #cgo linux,386   LDFLAGS: dep/flite/build/i386-linux-gnu/lib/libflite_cmu_us_slt.a dep/flite/build/i386-linux-gnu/lib/libflite_cmulex.a dep/flite/build/i386-linux-gnu/lib/libflite_usenglish.a dep/flite/build/i386-linux-gnu/lib/libflite.a -lm
+ #cgo linux,386   LDFLAGS: ${SRCDIR}/dep/flite/build/i386-linux-gnu/lib/libflite_cmu_us_slt.a ${SRCDIR}dep/flite/build/i386-linux-gnu/lib/libflite_cmulex.a ${SRCDIR}/dep/flite/build/i386-linux-gnu/lib/libflite_usenglish.a  ${SRCDIR}dep/flite/build/i386-linux-gnu/lib/libflite_cmu_indic_lex.a ${SRCDIR}/dep/flite/build/i386-linux-gnu/lib/libflite_cmu_indic_lang.a ${SRCDIR}/dep/flite/build/i386-linux-gnu/lib/libflite.a -lm
 
  #include <flitewrap.h>
  #include <flite.h>

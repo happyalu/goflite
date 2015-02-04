@@ -10,7 +10,8 @@
 // Initialize Flite
 void flitewrap_init() {
   flite_init();
-  flite_add_lang("usenglish",usenglish_init,cmulex_init);
+  flite_add_lang("eng",usenglish_init,cmulex_init);
+  flite_add_lang("cmu_indic_lang",cmu_indic_lang_init,cmu_indic_lex_init);
   flite_voice_list = val_reverse(cons_val(voice_val(register_cmu_us_slt(NULL)),flite_voice_list));
 }
 
