@@ -14,7 +14,7 @@ depflite: $(FLITEDIR)/flite $(FLITEDIR)/cmu_us_aup.flitevox
 
 $(FLITEDIR)/flite: $(FLITEDIR)/flite-2.0.0-release.tar.bz2
 	cd $(FLITEDIR) && tar xvjf flite-2.0.0-release.tar.bz2 && \
-		ln -s flite-2.0.0-release flite && cd flite && CFLAGS="-DCST_AUDIO_NONE -DCST_NO_SOCKETS" ./configure --with-pic --with-audio=none --with-mmap=none && make
+		ln -s flite-2.0.0-release flite && cd flite && ./configure --with-pic --with-audio=none --with-mmap=none && make
 
 $(FLITEDIR)/flite-2.0.0-release.tar.bz2:
 	mkdir -p $(FLITEDIR)
