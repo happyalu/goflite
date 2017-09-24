@@ -4,6 +4,11 @@ GoFlite
 
 Access the Flite Speech Synthesizer from Go!
 
+Requirements
+============
+
+This package (and the instructions below) only work under Linux.
+
 Usage
 =====
 
@@ -15,9 +20,9 @@ Build / Install
 ===============
 
 GoFlite depends upon the CMU Flite speech synthesis engine ( http://www.cmuflite.org ).
-Running "make depflite" in the source directory will download all dependencies. 
+Running "make depflite" in the source directory will download all dependencies.
 
-After than, "go build" or "go install" will build the library properly. 
+After than, "go build" or "go install" will build the library properly.
 
 Alternatively, you could just run "make" to download dependencies, build and test goflite.
 
